@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_12699c8b",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-02-01T12:11:55Z",
+      "side": 1,
+      "message": "Noted, I will fix both at the same time",
+      "parentUuid": "baada198_128d1c7c",
+      "revId": "6337f804a347b6e555680bf8ba3cbcaabf434ff0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f28fc873",
         "filename": "python-networking-sfc.spec",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_3205c0c2",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-02-01T12:11:55Z",
+      "side": 1,
+      "message": "Nice catch, I will fix this",
+      "parentUuid": "baada198_f28fc873",
+      "revId": "6337f804a347b6e555680bf8ba3cbcaabf434ff0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_72f3b80a",
         "filename": "python-networking-sfc.spec",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2017-02-01T09:39:26Z",
       "side": 1,
       "message": "I see no config files are included. Is this correct? I see a couple sample files in the oslo-config-generator source directory.\n\nIf config files are needed, you can use https://github.com/rdo-packages/networking-ovn-distgit/blob/rpm-master/python-networking-ovn.spec#L68-L69 as an example of how to run oslo-config-generator, and later lines to handle it. Remember to add openstack-neutron-common as a Requires for the package, since it owns the /etc/neutron dir.",
+      "revId": "6337f804a347b6e555680bf8ba3cbcaabf434ff0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f26b4883",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-02-01T12:11:55Z",
+      "side": 1,
+      "message": "Yes, these are not used apparently, I opened https://review.openstack.org/#/c/427636/ to clean them. Configuration is in neutron.conf and ml2_conf.ini (both in existing sections to load the extensions and specific sections).\n\nAs it implies modifying another package\u0027s configuration file, this has to be done manually or via puppet module?",
+      "parentUuid": "baada198_72f3b80a",
       "revId": "6337f804a347b6e555680bf8ba3cbcaabf434ff0",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
