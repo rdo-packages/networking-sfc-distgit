@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_7282d801",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-02-01T15:01:26Z",
+      "side": 1,
+      "message": "Done\n\nSome tests depend on neutronclient.tests.unit, which was removed from RDO:\nhttps://review.rdoproject.org/r/#/c/1621/\n\nSo I removed the matching tests (else imports fail) for now...",
+      "parentUuid": "baada198_12699c8b",
+      "revId": "6337f804a347b6e555680bf8ba3cbcaabf434ff0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f28fc873",
         "filename": "python-networking-sfc.spec",
         "patchSetId": 2
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Nice catch, I will fix this",
       "parentUuid": "baada198_f28fc873",
+      "revId": "6337f804a347b6e555680bf8ba3cbcaabf434ff0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_92876c0f",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-02-01T15:01:26Z",
+      "side": 1,
+      "message": "Synced with test build requirements",
+      "parentUuid": "baada198_3205c0c2",
       "revId": "6337f804a347b6e555680bf8ba3cbcaabf434ff0",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
@@ -119,6 +155,24 @@
       "side": 1,
       "message": "Ah right, let\u0027s skip them then.\n\nAbout modifying another package\u0027s config file, as you said it has to be done externally, for example using puppet.",
       "parentUuid": "baada198_f26b4883",
+      "revId": "6337f804a347b6e555680bf8ba3cbcaabf434ff0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b27b9028",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-02-01T15:01:26Z",
+      "side": 1,
+      "message": "OK, so all good here",
+      "parentUuid": "baada198_9214ccf6",
       "revId": "6337f804a347b6e555680bf8ba3cbcaabf434ff0",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
