@@ -16,6 +16,24 @@
       "revId": "695b70ccbeb31134dd0d9f60eae89a86ed12cc3f",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1e627bd8",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-02-09T13:28:56Z",
+      "side": 1,
+      "message": "I left them out as all SFC parts can only run as modules loaded by neutron services (which require the same deps).\nBut yes, that means it works only with indirect requires, I will add them here too.\n\nThough not all of them, some are cut\u0026paste from neutron and are not needed, I will send an upstream patch for these!",
+      "parentUuid": "baada198_33585856",
+      "revId": "695b70ccbeb31134dd0d9f60eae89a86ed12cc3f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
