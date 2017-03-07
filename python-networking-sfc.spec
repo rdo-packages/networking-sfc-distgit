@@ -3,8 +3,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        4.0.0
+Release:        1%{?dist}
 Summary:        API and implementations to support Service Function Chaining in Neutron
 
 License:        ASL 2.0
@@ -153,3 +153,6 @@ rm -rf %{module}/tests/unit/cli
 
 
 %changelog
+* Tue Mar 07 2017 Alfredo Moralejo <amoralej@redhat.com> 4.0.0-1
+- Update to 4.0.0
+
