@@ -130,9 +130,7 @@ rm -rf %{module}/tests/unit/cli
 
 
 %check
-# FIXME(bcafarel): random unit test failures, apparently CentOS-specific
-# Currently being tracked in https://bugs.launchpad.net/networking-sfc/+bug/1666568 
-%{__python2} setup.py testr || :
+%{__python2} setup.py testr
 
 
 %files -n python2-%{pypi_name}
