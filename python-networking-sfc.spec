@@ -115,6 +115,8 @@ Networking-sfc set of tests
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version}
+# Let RPM handle the dependencies
+rm -f *requirements.txt
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 # FIXME(bcafarel): require neutronclient.tests.unit (python-neutronclient-tests package was dropped)
