@@ -153,3 +153,4 @@ rm -rf %{module}/tests/unit/cli
 
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-sfc/commit/?id=a746a7d1b78ddba844bd75ebbd29882abd2d3b02
