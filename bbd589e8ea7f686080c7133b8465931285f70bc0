@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_84654a47",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-06-20T08:37:04Z",
+      "side": 1,
+      "message": "As we are using python2-networking-sfc and python2-networking-sfc-tests, i think this should be python2-networking-sfc-tests-tempest also",
+      "range": {
+        "startLine": 111,
+        "startChar": 12,
+        "endLine": 111,
+        "endChar": 18
+      },
+      "revId": "bbd589e8ea7f686080c7133b8465931285f70bc0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
