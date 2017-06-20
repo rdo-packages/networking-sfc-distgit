@@ -9,10 +9,12 @@ Summary:        API and implementations to support Service Function Chaining in 
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
-Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
 
+BuildRequires:  openstack-macros
+BuildRequires:  git
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
@@ -102,21 +104,27 @@ Requires:       python-oslotest
 Requires:       python-testrepository
 Requires:       python-testresources
 Requires:       python-testscenarios
-Requires:       python-neutron-lib-tests
-Requires:       python-neutron-tests
-Requires:       openstack-neutron
-# To remove when code has moved to python-openstackclient
-Requires:       python2-osc-lib-tests
-
 
 %description -n python2-%{pypi_name}-tests
 Networking-sfc set of tests
 
+%package -n python-%{pypi_name}-tests-tempest
+Summary:    Tempest plugin for %{name}
+
+Requires:       python2-%{pypi_name} = %{version}-%{release}
+Requires:       python-tempest-tests
+Requires:       python-neutron-lib-tests
+Requires:       python-neutron-tests
+Requires:       python2-osc-lib-tests
+
+%description -n python-%{pypi_name}-tests-tempest
+It contains the tempest plugin for %{name}.
 
 %prep
-%autosetup -n %{pypi_name}-%{upstream_version}
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
 # Let RPM handle the dependencies
-rm -f *requirements.txt
+%py_req_cleanup
+
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 # FIXME(bcafarel): require neutronclient.tests.unit (python-neutronclient-tests package was dropped)
@@ -130,10 +138,15 @@ rm -rf %{module}/tests/unit/cli
 %install
 %py2_install
 
+# Create a fake tempest plugin entrypoint
+%py2_entrypoint %{module} %{pypi_name}
+
 
 %check
+export OS_TEST_PATH='./networking_sfc/tests/functional'
+export PATH=$PATH:$RPM_BUILD_ROOT/usr/bin
+export PYTHONPATH=$PWD
 %{__python2} setup.py testr
-
 
 %files -n python2-%{pypi_name}
 %license LICENSE
@@ -147,9 +160,12 @@ rm -rf %{module}/tests/unit/cli
 %license LICENSE
 
 %files -n python2-%{pypi_name}-tests
-%license LICENSE
 %{python2_sitelib}/%{module}/tests
 %exclude %{python2_sitelib}/%{module}/tests/contrib
+%exclude %{python2_sitelib}/%{module}/tests/tempest_plugin
 
+%files -n python-%{pypi_name}-tests-tempest
+%{python2_sitelib}/%{module}_tests.egg-info
+%{python2_sitelib}/%{module}/tests/tempest_plugin
 
 %changelog
