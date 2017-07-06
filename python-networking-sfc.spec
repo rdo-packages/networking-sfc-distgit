@@ -170,3 +170,4 @@ export PYTHONPATH=$PWD
 %{python2_sitelib}/%{module}/tests/__init__.py*
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-sfc/commit/?id=a811f86c0e97877a0116e3a34016382c3cb5f30b
