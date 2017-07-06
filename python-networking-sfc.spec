@@ -18,7 +18,7 @@ BuildRequires:  git
 BuildRequires:  python2-devel
 BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-sphinx
 # Test requirements
 BuildRequires:  python-mock
@@ -132,7 +132,9 @@ rm -rf %{module}/tests/unit/cli
 
 %build
 %py2_build
-%{__python2} setup.py build_sphinx
+%{__python2} setup.py build_sphinx -b html
+# remove the sphinx-build leftovers
+rm -rf doc/build/html/.{doctrees,buildinfo}
 
 
 %install
