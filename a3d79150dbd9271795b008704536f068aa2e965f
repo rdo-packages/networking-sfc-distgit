@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_33ccf035",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-04T15:15:08Z",
+      "side": 1,
+      "message": "Although i don\u0027t know too much about networking-sfc, this sounds a bit weird to me. This service is not providing any agent, so, what agent or process should load this file?, neutron server?",
+      "range": {
+        "startLine": 156,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 107
+      },
+      "revId": "a3d79150dbd9271795b008704536f068aa2e965f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
