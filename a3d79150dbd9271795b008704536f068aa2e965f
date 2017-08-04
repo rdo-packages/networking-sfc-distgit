@@ -46,6 +46,30 @@
       "revId": "a3d79150dbd9271795b008704536f068aa2e965f",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_536dfc03",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-04T16:15:08Z",
+      "side": 1,
+      "message": "Can that config file be modified by users (i guess so)?, neutron-server loads any config file existing in /etc/neutron/conf.d/neutron-server [1]. So I think that\u0027s the best place for this config file, i\u0027ll add someone from neutron team to review also.\n\n[1] https://github.com/rdo-packages/neutron-distgit/blob/rpm-master/neutron-server.service#L8",
+      "parentUuid": "5a890539_73bbd872",
+      "range": {
+        "startLine": 156,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 107
+      },
+      "revId": "a3d79150dbd9271795b008704536f068aa2e965f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
