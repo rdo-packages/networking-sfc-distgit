@@ -30,8 +30,6 @@ BuildRequires:  python-testscenarios
 BuildRequires:  python-neutron-lib-tests
 BuildRequires:  python-neutron-tests
 BuildRequires:  openstack-neutron
-# To remove when code has moved to python-openstackclient
-BuildRequires:  python2-osc-lib-tests
 
 %description
 This project provides APIs and implementations to support Service Function
@@ -69,8 +67,6 @@ Requires:       python-oslo-utils
 Requires:       python-six
 Requires:       python-sqlalchemy
 Requires:       python-stevedore
-# To remove when code has moved to python-openstackclient
-Requires:       python-openstackclient
 
 %description -n python2-%{pypi_name}
 This project provides APIs and implementations to support Service Function
@@ -106,7 +102,6 @@ Requires:       python-testresources
 Requires:       python-testscenarios
 Requires:       python-neutron-lib-tests
 Requires:       python-neutron-tests
-Requires:       python2-osc-lib-tests
 
 %description -n python2-%{pypi_name}-tests
 Networking-sfc set of tests
