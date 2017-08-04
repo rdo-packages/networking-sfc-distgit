@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_53997c6d",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-04T13:38:40Z",
+      "side": 1,
+      "message": "Should this be removed?",
+      "range": {
+        "startLine": 71,
+        "startChar": 16,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "revId": "b2533ebd2cf6fd9da13e69881f9f313110bed1a7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
