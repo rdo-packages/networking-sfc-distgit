@@ -22,6 +22,30 @@
       "revId": "a3d79150dbd9271795b008704536f068aa2e965f",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_73bbd872",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-08-04T15:42:42Z",
+      "side": 1,
+      "message": "If I got it correctly that is the goal yes, with that change neutron-server should have this file passed in its configuration files list and load the parameters for networking-sfc extension.\nBut I\u0027ll defer to Ricardo for the definitive answer!",
+      "parentUuid": "5a890539_33ccf035",
+      "range": {
+        "startLine": 156,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 107
+      },
+      "revId": "a3d79150dbd9271795b008704536f068aa2e965f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
