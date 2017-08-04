@@ -130,6 +130,8 @@ rm -rf %{module}/tests/unit/cli
 %{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+# generate the configuration file
+PYTHONPATH=. oslo-config-generator --config-file etc/oslo-config-generator/networking-sfc.conf
 
 
 %install
@@ -138,6 +140,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 # Create a fake tempest plugin entrypoint
 %py2_entrypoint %{module} %{pypi_name}
 
+# The generated config files are not moved automatically by setup.py
+mkdir -p %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-server
+mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-server/networking-sfc.conf
 
 %check
 export OS_TEST_PATH='./networking_sfc/tests/functional'
@@ -149,6 +154,7 @@ export PATH=$PATH:$RPM_BUILD_ROOT/usr/bin
 %doc README.rst
 %{python2_sitelib}/%{module}
 %{python2_sitelib}/%{module}-*.egg-info
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/conf.d/neutron-server/networking-sfc.conf
 %exclude %{python2_sitelib}/%{module}/tests
 
 %files -n python-%{pypi_name}-doc
