@@ -142,7 +142,6 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %check
 export OS_TEST_PATH='./networking_sfc/tests/functional'
 export PATH=$PATH:$RPM_BUILD_ROOT/usr/bin
-export PYTHONPATH=$PWD
 %{__python2} setup.py testr
 
 %files -n python2-%{pypi_name}
