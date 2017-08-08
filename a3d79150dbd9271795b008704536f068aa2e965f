@@ -118,6 +118,30 @@
       "revId": "a3d79150dbd9271795b008704536f068aa2e965f",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_39604a35",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 328
+      },
+      "writtenOn": "2017-08-08T13:53:46Z",
+      "side": 1,
+      "message": "Makes sense to me.  I see config-dir arg on neutron-server is:\n--config-dir /etc/neutron/conf.d/neutron-server\n\nHow does bgpvpn currently work today?  I don\u0027t see it added t conf.d, only policy.d?\nhttps://review.rdoproject.org/r/gitweb?p\u003dopenstack/networking-bgpvpn-distgit.git;a\u003dblob;f\u003dpython-networking-bgpvpn.spec;h\u003d783dcaeefda7874561a15bbd8a8dc4950e8a4d8e;hb\u003dHEAD",
+      "parentUuid": "5a890539_f6fb3145",
+      "range": {
+        "startLine": 156,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 107
+      },
+      "revId": "a3d79150dbd9271795b008704536f068aa2e965f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
