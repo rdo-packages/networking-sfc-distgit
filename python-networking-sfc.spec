@@ -16,7 +16,6 @@ BuildArch:      noarch
 BuildRequires:  openstack-macros
 BuildRequires:  git
 BuildRequires:  python2-devel
-BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
 BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-sphinx
