@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_24e576a8",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-14T17:54:56Z",
+      "side": 1,
+      "message": "We should add explicit versions for other openstack packages as neutron-lib, neutronclient, and oslo* as defined in requirements.txt. I should have done it for ocata.",
+      "revId": "a8801941101a2aa7d8169e3e11bba58b6e779ae1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
