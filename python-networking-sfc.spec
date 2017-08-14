@@ -16,7 +16,6 @@ BuildArch:      noarch
 BuildRequires:  openstack-macros
 BuildRequires:  git
 BuildRequires:  python2-devel
-BuildRequires:  python-setuptools
 BuildRequires:  python-pbr
 BuildRequires:  python-openstackdocstheme
 BuildRequires:  python-sphinx
@@ -58,17 +57,17 @@ Requires:       python-alembic
 Requires:       python-eventlet
 Requires:       python-netaddr
 Requires:       python-neutron
-Requires:       python-neutron-lib
-Requires:       python-neutronclient
-Requires:       python-oslo-config
-Requires:       python-oslo-i18n
-Requires:       python-oslo-log
-Requires:       python-oslo-messaging
-Requires:       python-oslo-serialization
-Requires:       python-oslo-utils
+Requires:       python-neutron-lib >= 1.9.0
+Requires:       python-neutronclient >= 6.3.0
+Requires:       python-oslo-config >= 2:4.0.0
+Requires:       python-oslo-i18n >= 2.1.0
+Requires:       python-oslo-log >= 3.22.0
+Requires:       python-oslo-messaging >= 5.24.2
+Requires:       python-oslo-serialization >= 1.10.0
+Requires:       python-oslo-utils >= 3.20.0
 Requires:       python-six
 Requires:       python-sqlalchemy
-Requires:       python-stevedore
+Requires:       python-stevedore >= 1.20.0
 
 %description -n python2-%{pypi_name}
 This project provides APIs and implementations to support Service Function
