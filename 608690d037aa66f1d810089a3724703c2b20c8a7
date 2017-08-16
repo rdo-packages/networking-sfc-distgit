@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_b5cfd2af",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-16T14:14:19Z",
+      "side": 1,
+      "message": "oslo-config has epoch\u003d2, this should be \u003e\u003d 2:4.0.0",
+      "revId": "608690d037aa66f1d810089a3724703c2b20c8a7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
