@@ -2,6 +2,23 @@
 %global module networking_sfc
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
+%global common_desc \
+This project provides APIs and implementations to support Service Function \
+Chaining in Neutron. \
+\
+Service Function Chaining is a mechanism for overriding the basic destination \
+based forwarding that is typical of IP networks. It is conceptually related to \
+Policy Based Routing in physical networks but it is typically thought of as a \
+Software Defined Networking technology. It is often used in conjunction with \
+security functions although it may be used for a broader range of features. \
+Fundamentally SFC is the ability to cause network packet flows to route through \
+a network via a path other than the one that would be chosen by routing table \
+lookup on the packet's destination IP address. It is most commonly used in \
+conjunction with Network Function Virtualization when recreating in a virtual \
+environment a series of network functions that would have traditionally been \
+implemented as a collection of physical network devices connected in series by \
+cables.
+
 Name:           python-%{pypi_name}
 Version:        XXX
 Release:        XXX
@@ -31,21 +48,7 @@ BuildRequires:  python-neutron-tests
 BuildRequires:  openstack-neutron
 
 %description
-This project provides APIs and implementations to support Service Function
-Chaining in Neutron.
-
-Service Function Chaining is a mechanism for overriding the basic destination
-based forwarding that is typical of IP networks. It is conceptually related to
-Policy Based Routing in physical networks but it is typically thought of as a
-Software Defined Networking technology. It is often used in conjunction with
-security functions although it may be used for a broader range of features.
-Fundamentally SFC is the ability to cause network packet flows to route through
-a network via a path other than the one that would be chosen by routing table
-lookup on the packet's destination IP address. It is most commonly used in
-conjunction with Network Function Virtualization when recreating in a virtual
-environment a series of network functions that would have traditionally been
-implemented as a collection of physical network devices connected in series by
-cables.
+%{common_desc}
 
 %package -n python2-%{pypi_name}
 Summary:        API and implementations to support Service Function Chaining in Neutron
@@ -70,22 +73,7 @@ Requires:       python-sqlalchemy
 Requires:       python-stevedore >= 1.20.0
 
 %description -n python2-%{pypi_name}
-This project provides APIs and implementations to support Service Function
-Chaining in Neutron.
-
-Service Function Chaining is a mechanism for overriding the basic destination
-based forwarding that is typical of IP networks. It is conceptually related to
-Policy Based Routing in physical networks but it is typically thought of as a
-Software Defined Networking technology. It is often used in conjunction with
-security functions although it may be used for a broader range of features.
-Fundamentally SFC is the ability to cause network packet flows to route through
-a network via a path other than the one that would be chosen by routing table
-lookup on the packet's destination IP address. It is most commonly used in
-conjunction with Network Function Virtualization when recreating in a virtual
-environment a series of network functions that would have traditionally been
-implemented as a collection of physical network devices connected in series by
-cables.
-
+%{common_desc}
 
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for networking-sfc
