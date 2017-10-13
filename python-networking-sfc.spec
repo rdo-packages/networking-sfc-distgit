@@ -99,7 +99,7 @@ Networking-sfc set of tests
 Summary:    Tempest plugin for %{name}
 
 Requires:       python2-%{pypi_name} = %{version}-%{release}
-Requires:       python-tempest-tests
+Requires:       python-tempest
 
 %description -n python2-%{pypi_name}-tests-tempest
 It contains the tempest plugin for %{name}.
