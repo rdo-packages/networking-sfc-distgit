@@ -33,16 +33,16 @@ BuildArch:      noarch
 BuildRequires:  openstack-macros
 BuildRequires:  git
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-openstackdocstheme
-BuildRequires:  python-sphinx
+BuildRequires:  python2-pbr
+BuildRequires:  python2-openstackdocstheme
+BuildRequires:  python2-sphinx
 # Test requirements
-BuildRequires:  python-mock
+BuildRequires:  python2-mock
 BuildRequires:  python-requests-mock
-BuildRequires:  python-oslotest
-BuildRequires:  python-testrepository
-BuildRequires:  python-testresources
-BuildRequires:  python-testscenarios
+BuildRequires:  python2-oslotest
+BuildRequires:  python2-testrepository
+BuildRequires:  python2-testresources
+BuildRequires:  python2-testscenarios
 BuildRequires:  python-neutron-lib-tests
 BuildRequires:  python-neutron-tests
 BuildRequires:  openstack-neutron
@@ -54,23 +54,24 @@ BuildRequires:  openstack-neutron
 Summary:        API and implementations to support Service Function Chaining in Neutron
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
+Requires:       python2-pbr >= 2.0.0
 Requires:       openstack-neutron-common
 Requires:       openstack-neutron
-Requires:       python-alembic
-Requires:       python-eventlet
-Requires:       python-netaddr
+Requires:       python2-alembic
+Requires:       python2-eventlet
+Requires:       python2-netaddr
 Requires:       python-neutron
-Requires:       python-neutron-lib >= 1.9.0
-Requires:       python-neutronclient >= 6.3.0
-Requires:       python-oslo-config >= 2:4.0.0
-Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-log >= 3.22.0
-Requires:       python-oslo-messaging >= 5.24.2
-Requires:       python-oslo-serialization >= 1.10.0
-Requires:       python-oslo-utils >= 3.20.0
-Requires:       python-six
-Requires:       python-sqlalchemy
-Requires:       python-stevedore >= 1.20.0
+Requires:       python-neutron-lib >= 1.13.0
+Requires:       python2-neutronclient >= 6.3.0
+Requires:       python2-oslo-config >= 2:5.1.0
+Requires:       python2-oslo-i18n >= 3.15.3
+Requires:       python2-oslo-log >= 3.36.0
+Requires:       python2-oslo-messaging >= 5.29.0
+Requires:       python2-oslo-serialization >= 2.18.0
+Requires:       python2-oslo-utils >= 3.33.0
+Requires:       python2-six
+Requires:       python2-sqlalchemy
+Requires:       python2-stevedore >= 1.20.0
 
 %description -n python2-%{pypi_name}
 %{common_desc}
@@ -83,12 +84,12 @@ Documentation for networking-sfc
 %package -n python2-%{pypi_name}-tests
 Summary:        Tests for networking-sfc
 Requires:       python2-%{pypi_name} = %{version}-%{release}
-Requires:       python-mock
+Requires:       python2-mock
 Requires:       python-requests-mock
-Requires:       python-oslotest
-Requires:       python-testrepository
-Requires:       python-testresources
-Requires:       python-testscenarios
+Requires:       python2-oslotest
+Requires:       python2-testrepository
+Requires:       python2-testresources
+Requires:       python2-testscenarios
 Requires:       python-neutron-lib-tests
 Requires:       python-neutron-tests
 
@@ -99,7 +100,7 @@ Networking-sfc set of tests
 Summary:    Tempest plugin for %{name}
 
 Requires:       python2-%{pypi_name} = %{version}-%{release}
-Requires:       python-tempest
+Requires:       python2-tempest
 
 %description -n python2-%{pypi_name}-tests-tempest
 It contains the tempest plugin for %{name}.
