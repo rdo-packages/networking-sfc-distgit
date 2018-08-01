@@ -40,7 +40,7 @@ BuildRequires:  python2-sphinx
 BuildRequires:  python2-mock
 BuildRequires:  python-requests-mock
 BuildRequires:  python2-oslotest
-BuildRequires:  python2-testrepository
+BuildRequires:  python2-stestr
 BuildRequires:  python2-testresources
 BuildRequires:  python2-testscenarios
 BuildRequires:  python-neutron-lib-tests
@@ -87,7 +87,7 @@ Requires:       python2-%{pypi_name} = %{version}-%{release}
 Requires:       python2-mock
 Requires:       python-requests-mock
 Requires:       python2-oslotest
-Requires:       python2-testrepository
+Requires:       python2-stestr
 Requires:       python2-testresources
 Requires:       python2-testscenarios
 Requires:       python-neutron-lib-tests
@@ -137,7 +137,7 @@ mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neut
 %check
 export OS_TEST_PATH='./networking_sfc/tests/functional'
 export PATH=$PATH:$RPM_BUILD_ROOT/usr/bin
-%{__python2} setup.py testr
+%{__python2} setup.py test
 
 %files -n python2-%{pypi_name}
 %license LICENSE
