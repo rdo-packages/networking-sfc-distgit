@@ -162,3 +162,4 @@ export PATH=$PATH:$RPM_BUILD_ROOT/usr/bin
 %{python2_sitelib}/%{module}/tests/__init__.py*
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-sfc/commit/?id=22e13c4c17454f25392b58c4b51362cc2270f2f1
