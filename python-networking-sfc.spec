@@ -137,7 +137,7 @@ mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neut
 %check
 export OS_TEST_PATH='./networking_sfc/tests/functional'
 export PATH=$PATH:$RPM_BUILD_ROOT/usr/bin
-%{__python2} setup.py test
+stestr run
 
 %files -n python2-%{pypi_name}
 %license LICENSE
