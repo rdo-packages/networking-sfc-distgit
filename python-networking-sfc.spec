@@ -61,9 +61,9 @@ Requires:       python2-alembic
 Requires:       python2-eventlet
 Requires:       python2-netaddr
 Requires:       python-neutron
-Requires:       python-neutron-lib >= 1.13.0
-Requires:       python2-neutronclient >= 6.3.0
-Requires:       python2-oslo-config >= 2:5.1.0
+Requires:       python-neutron-lib >= 1.18.0
+Requires:       python2-neutronclient >= 6.7.0
+Requires:       python2-oslo-config >= 2:5.2.0
 Requires:       python2-oslo-i18n >= 3.15.3
 Requires:       python2-oslo-log >= 3.36.0
 Requires:       python2-oslo-messaging >= 5.29.0
