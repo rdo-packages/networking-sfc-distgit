@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_ae3ba69b",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "%{module} %{pypi_name}",
+      "range": {
+        "startLine": 17,
+        "startChar": 48,
+        "endLine": 17,
+        "endChar": 76
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_ced13a59",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "can remove these",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 36
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_aed4c646",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "move these out of if condition as it will cover both py2/py3.",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 44
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_8ecb42a5",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "can remove these.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 44
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_6eceaeb5",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "move these out of condition",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 52
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_4ec64a9b",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "doc packages should be unversioned. remove this.",
+      "range": {
+        "startLine": 105,
+        "startChar": 18,
+        "endLine": 105,
+        "endChar": 26
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_2ec1d680",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 107,
+        "startChar": 22,
+        "endLine": 107,
+        "endChar": 30
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_0ec0527a",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "remove these",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 36
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_eebabe09",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "move these out of conditional",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 44
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_eee3de31",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "remove this, as this need in macro definition",
+      "range": {
+        "startLine": 163,
+        "startChar": 17,
+        "endLine": 163,
+        "endChar": 40
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_ce381aa3",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-10T06:00:23Z",
+      "side": 1,
+      "message": "remove it.",
+      "range": {
+        "startLine": 182,
+        "startChar": 16,
+        "endLine": 182,
+        "endChar": 24
+      },
+      "revId": "15a2cbf96749828496225c79c497157ee6ab54ac",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
