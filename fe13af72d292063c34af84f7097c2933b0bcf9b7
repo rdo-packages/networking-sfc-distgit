@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_a92f20f5",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-11T10:01:05Z",
+      "side": 1,
+      "message": "can u try removing this, we should run unit tests, .stestr.conf contains patch for unit tests.\n\nhttps://github.com/openstack/networking-sfc/blob/master/tox.ini#L24",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 55
+      },
+      "revId": "fe13af72d292063c34af84f7097c2933b0bcf9b7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
