@@ -22,6 +22,30 @@
       "revId": "fe13af72d292063c34af84f7097c2933b0bcf9b7",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_ed5643d1",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-12-11T13:29:00Z",
+      "side": 1,
+      "message": "Yes, we don\u0027t run functional tests at packaging, only unit tests",
+      "parentUuid": "9abe1de1_a92f20f5",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 55
+      },
+      "revId": "fe13af72d292063c34af84f7097c2933b0bcf9b7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
