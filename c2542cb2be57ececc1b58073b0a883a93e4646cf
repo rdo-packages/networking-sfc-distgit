@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6af3cccf_f61a9180",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-03-20T09:17:17Z",
+      "side": 1,
+      "message": "1:13.0.0",
+      "range": {
+        "startLine": 78,
+        "startChar": 37,
+        "endLine": 78,
+        "endChar": 43
+      },
+      "revId": "c2542cb2be57ececc1b58073b0a883a93e4646cf",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
