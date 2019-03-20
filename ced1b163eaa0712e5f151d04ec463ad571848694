@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9faf0b4_62432673",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-03-20T05:54:26Z",
+      "side": 1,
+      "message": "good to keep same as upstream like, \u003e\u003d 2.0.0",
+      "range": {
+        "startLine": 76,
+        "startChar": 35,
+        "endLine": 76,
+        "endChar": 42
+      },
+      "revId": "ced1b163eaa0712e5f151d04ec463ad571848694",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c20c3b2b_64fab21b",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-03-20T05:54:26Z",
+      "side": 1,
+      "message": "\u003e\u003d 1:13.0.0\n\n%{epoch} can\u0027t be used here as it\u0027s not in networking-sfc spec.",
+      "range": {
+        "startLine": 78,
+        "startChar": 37,
+        "endLine": 78,
+        "endChar": 56
+      },
+      "revId": "ced1b163eaa0712e5f151d04ec463ad571848694",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a3effa2a_530023c8",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-03-20T05:54:26Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 80,
+        "startChar": 42,
+        "endLine": 80,
+        "endChar": 48
+      },
+      "revId": "ced1b163eaa0712e5f151d04ec463ad571848694",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "91430cd9_093ad4bb",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-03-20T05:54:26Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 87,
+        "startChar": 51,
+        "endLine": 87,
+        "endChar": 58
+      },
+      "revId": "ced1b163eaa0712e5f151d04ec463ad571848694",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
