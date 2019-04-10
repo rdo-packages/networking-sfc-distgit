@@ -1,4 +1,3 @@
-%global milestone .0rc1
 %global pypi_name networking-sfc
 %global module networking_sfc
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -37,15 +36,13 @@ cables.
 
 Name:           python-%{pypi_name}
 Version:        8.0.0
-Release:        0.1%{?milestone}%{?dist}
+Release:        1%{?dist}
 Summary:        API and implementations to support Service Function Chaining in Neutron
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 
-#
-# patches_base=8.0.0.0rc1
 #
 
 BuildArch:      noarch
@@ -189,6 +186,9 @@ stestr-%{pyver} run
 %{pyver_sitelib}/%{module}/tests/__init__.py*
 
 %changelog
+* Wed Apr 10 2019 RDO <dev@lists.rdoproject.org> 8.0.0-1
+- Update to 8.0.0
+
 * Fri Mar 22 2019 RDO <dev@lists.rdoproject.org> 8.0.0-0.1.0rc1
 - Update to 8.0.0.0rc1
 
