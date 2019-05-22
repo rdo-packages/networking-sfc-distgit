@@ -159,7 +159,7 @@ mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neut
 
 %check
 export PATH=$PATH:$RPM_BUILD_ROOT/usr/bin
-stestr-%{pyver} run
+PYTHON=%{pyver_bin} stestr-%{pyver} run
 
 %files -n python%{pyver}-%{pypi_name}
 %license LICENSE
