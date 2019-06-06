@@ -184,3 +184,4 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run
 %{pyver_sitelib}/%{module}/tests/__init__.py*
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-sfc/commit/?id=0014c99fadcd18da86bf8f961336fbd03f29682c
