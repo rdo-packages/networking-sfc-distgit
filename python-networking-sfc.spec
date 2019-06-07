@@ -119,15 +119,6 @@ BuildRequires:  python%{pyver}-requests-mock
 %description -n python%{pyver}-%{pypi_name}-tests
 Networking-sfc set of tests
 
-%package -n python%{pyver}-%{pypi_name}-tests-tempest
-Summary:    Tempest plugin for %{name}
-
-Requires:       python%{pyver}-%{pypi_name} = %{version}-%{release}
-Requires:       python%{pyver}-tempest
-
-%description -n python%{pyver}-%{pypi_name}-tests-tempest
-It contains the tempest plugin for %{name}.
-
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 # Let RPM handle the dependencies
@@ -149,9 +140,6 @@ PYTHONPATH=. oslo-config-generator-%{pyver} --config-file etc/oslo-config-genera
 
 %install
 %pyver_install
-
-# Create a fake tempest plugin entrypoint
-%pyver_entrypoint
 
 # The generated config files are not moved automatically by setup.py
 mkdir -p %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-server
@@ -176,11 +164,5 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run
 %files -n python%{pyver}-%{pypi_name}-tests
 %{pyver_sitelib}/%{module}/tests
 %exclude %{pyver_sitelib}/%{module}/tests/contrib
-%exclude %{pyver_sitelib}/%{module}/tests/tempest_plugin
-
-%files -n python%{pyver}-%{pypi_name}-tests-tempest
-%{pyver_sitelib}/%{module}_tests.egg-info
-%{pyver_sitelib}/%{module}/tests/tempest_plugin
-%{pyver_sitelib}/%{module}/tests/__init__.py*
 
 %changelog
