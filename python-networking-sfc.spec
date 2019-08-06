@@ -2,6 +2,7 @@
 %global module networking_sfc
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global docpath doc/build/html
+%global with_doc 1
 
 # Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
@@ -49,8 +50,6 @@ BuildRequires:  openstack-macros
 BuildRequires:  git
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-openstackdocstheme
-BuildRequires:  python%{pyver}-sphinx
 # Test requirements
 BuildRequires:  python%{pyver}-mock
 BuildRequires:  python%{pyver}-oslotest
@@ -95,10 +94,18 @@ Requires:       python%{pyver}-neutron-lib >= 1.18.0
 %description -n python%{pyver}-%{pypi_name}
 %{common_desc}
 
+%if 0%{?with_doc}
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for networking-sfc
+
+BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-sphinx
+
 %description -n python-%{pypi_name}-doc
-Documentation for networking-sfc
+%{common_desc}
+
+This package contains documentation.
+%endif
 
 %package -n python%{pyver}-%{pypi_name}-tests
 Summary:        Tests for networking-sfc
@@ -131,9 +138,13 @@ rm -rf %{module}/tests/unit/cli
 
 %build
 %pyver_build
+
+%if 0%{?with_doc}
 %{pyver_bin} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
+
 # generate the configuration file
 PYTHONPATH=. oslo-config-generator-%{pyver} --config-file etc/oslo-config-generator/networking-sfc.conf
 
@@ -157,9 +168,11 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/conf.d/neutron-server/networking-sfc.conf
 %exclude %{pyver_sitelib}/%{module}/tests
 
+%if 0%{?with_doc}
 %files -n python-%{pypi_name}-doc
 %doc doc/build/html/*
 %license LICENSE
+%endif
 
 %files -n python%{pyver}-%{pypi_name}-tests
 %{pyver_sitelib}/%{module}/tests
