@@ -100,6 +100,7 @@ Summary:        Documentation for networking-sfc
 
 BuildRequires:  python%{pyver}-openstackdocstheme
 BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python%{pyver}-sphinxcontrib-rsvgconverter
 
 %description -n python-%{pypi_name}-doc
 %{common_desc}
