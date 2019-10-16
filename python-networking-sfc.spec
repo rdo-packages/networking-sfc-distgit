@@ -1,4 +1,3 @@
-%global milestone .0rc1
 %global pypi_name networking-sfc
 %global module networking_sfc
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -38,7 +37,7 @@ cables.
 
 Name:           python-%{pypi_name}
 Version:        9.0.0
-Release:        0.1%{?milestone}%{?dist}
+Release:        1%{?dist}
 Summary:        API and implementations to support Service Function Chaining in Neutron
 
 License:        ASL 2.0
@@ -51,7 +50,6 @@ BuildRequires:  openstack-macros
 BuildRequires:  git
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
-# patches_base=9.0.0.0rc1
 # Test requirements
 BuildRequires:  python%{pyver}-mock
 BuildRequires:  python%{pyver}-oslotest
@@ -181,6 +179,9 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run
 %exclude %{pyver_sitelib}/%{module}/tests/contrib
 
 %changelog
+* Wed Oct 16 2019 RDO <dev@lists.rdoproject.org> 9.0.0-1
+- Update to 9.0.0
+
 * Fri Oct 04 2019 RDO <dev@lists.rdoproject.org> 9.0.0-0.1.0rc1
 - Update to 9.0.0.0rc1
 
