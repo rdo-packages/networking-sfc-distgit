@@ -180,3 +180,4 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run
 %exclude %{pyver_sitelib}/%{module}/tests/contrib
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-sfc/commit/?id=84175687fb5c23fdf76322b18392c783ca8d6d73
