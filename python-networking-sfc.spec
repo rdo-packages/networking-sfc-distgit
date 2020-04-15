@@ -4,19 +4,6 @@
 %global docpath doc/build/html
 %global with_doc 1
 
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-%global pyver_entrypoint %py%{pyver}_entrypoint %{module} %{pypi_name}
-# End of macros for py2/py3 compatibility
 
 %global common_desc \
 This project provides APIs and implementations to support Service Function \
@@ -48,59 +35,55 @@ BuildArch:      noarch
 
 BuildRequires:  openstack-macros
 BuildRequires:  git
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python3-devel
+BuildRequires:  python3-pbr
 # Test requirements
-BuildRequires:  python%{pyver}-mock
-BuildRequires:  python%{pyver}-oslotest
-BuildRequires:  python%{pyver}-stestr
-BuildRequires:  python%{pyver}-testresources
-BuildRequires:  python%{pyver}-testscenarios
-BuildRequires:  python%{pyver}-neutron-lib-tests
-BuildRequires:  python%{pyver}-neutron-tests
-%if %{pyver} == 2
-BuildRequires:  python-requests-mock
-%else
-BuildRequires:  python%{pyver}-requests-mock
-%endif
+BuildRequires:  python3-mock
+BuildRequires:  python3-oslotest
+BuildRequires:  python3-stestr
+BuildRequires:  python3-testresources
+BuildRequires:  python3-testscenarios
+BuildRequires:  python3-neutron-lib-tests
+BuildRequires:  python3-neutron-tests
+BuildRequires:  python3-requests-mock
 BuildRequires:  openstack-neutron
 
 %description
 %{common_desc}
 
-%package -n python%{pyver}-%{pypi_name}
+%package -n python3-%{pypi_name}
 Summary:        API and implementations to support Service Function Chaining in Neutron
-%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
+%{?python_provide:%python_provide python3-%{pypi_name}}
 
-Requires:       python%{pyver}-pbr >= 2.0.0
+Requires:       python3-pbr >= 2.0.0
 Requires:       openstack-neutron-common
 Requires:       openstack-neutron >= 1:13.0.0
-Requires:       python%{pyver}-alembic >= 0.8.10
-Requires:       python%{pyver}-eventlet >= 0.18.2
-Requires:       python%{pyver}-netaddr >= 0.7.18
-Requires:       python%{pyver}-neutronclient >= 6.7.0
-Requires:       python%{pyver}-oslo-config >= 2:5.2.0
-Requires:       python%{pyver}-oslo-i18n >= 3.15.3
-Requires:       python%{pyver}-oslo-log >= 3.36.0
-Requires:       python%{pyver}-oslo-messaging >= 5.29.0
-Requires:       python%{pyver}-oslo-serialization >= 2.18.0
-Requires:       python%{pyver}-oslo-utils >= 3.33.0
-Requires:       python%{pyver}-six >= 1.10.0
-Requires:       python%{pyver}-sqlalchemy >= 1.2.0
-Requires:       python%{pyver}-stevedore >= 1.20.0
-Requires:       python%{pyver}-neutron
-Requires:       python%{pyver}-neutron-lib >= 1.18.0
+Requires:       python3-alembic >= 0.8.10
+Requires:       python3-eventlet >= 0.18.2
+Requires:       python3-netaddr >= 0.7.18
+Requires:       python3-neutronclient >= 6.7.0
+Requires:       python3-oslo-config >= 2:5.2.0
+Requires:       python3-oslo-i18n >= 3.15.3
+Requires:       python3-oslo-log >= 3.36.0
+Requires:       python3-oslo-messaging >= 5.29.0
+Requires:       python3-oslo-serialization >= 2.18.0
+Requires:       python3-oslo-utils >= 3.33.0
+Requires:       python3-six >= 1.10.0
+Requires:       python3-sqlalchemy >= 1.2.0
+Requires:       python3-stevedore >= 1.20.0
+Requires:       python3-neutron
+Requires:       python3-neutron-lib >= 1.18.0
 
-%description -n python%{pyver}-%{pypi_name}
+%description -n python3-%{pypi_name}
 %{common_desc}
 
 %if 0%{?with_doc}
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for networking-sfc
 
-BuildRequires:  python%{pyver}-openstackdocstheme
-BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  python%{pyver}-sphinxcontrib-rsvgconverter
+BuildRequires:  python3-openstackdocstheme
+BuildRequires:  python3-sphinx
+BuildRequires:  python3-sphinxcontrib-rsvgconverter
 
 %description -n python-%{pypi_name}-doc
 %{common_desc}
@@ -108,23 +91,19 @@ BuildRequires:  python%{pyver}-sphinxcontrib-rsvgconverter
 This package contains documentation.
 %endif
 
-%package -n python%{pyver}-%{pypi_name}-tests
+%package -n python3-%{pypi_name}-tests
 Summary:        Tests for networking-sfc
-Requires:       python%{pyver}-%{pypi_name} = %{version}-%{release}
-Requires:       python%{pyver}-mock
-Requires:       python%{pyver}-oslotest
-Requires:       python%{pyver}-stestr
-Requires:       python%{pyver}-testresources
-Requires:       python%{pyver}-testscenarios
-BuildRequires:  python%{pyver}-neutron-lib-tests
-BuildRequires:  python%{pyver}-neutron-tests
-%if %{pyver} == 2
-BuildRequires:  python-requests-mock
-%else
-BuildRequires:  python%{pyver}-requests-mock
-%endif
+Requires:       python3-%{pypi_name} = %{version}-%{release}
+Requires:       python3-mock
+Requires:       python3-oslotest
+Requires:       python3-stestr
+Requires:       python3-testresources
+Requires:       python3-testscenarios
+BuildRequires:  python3-neutron-lib-tests
+BuildRequires:  python3-neutron-tests
+BuildRequires:  python3-requests-mock
 
-%description -n python%{pyver}-%{pypi_name}-tests
+%description -n python3-%{pypi_name}-tests
 Networking-sfc set of tests
 
 %prep
@@ -138,20 +117,20 @@ rm -rf %{pypi_name}.egg-info
 rm -rf %{module}/tests/unit/cli
 
 %build
-%pyver_build
+%py3_build
 
 %if 0%{?with_doc}
-%{pyver_bin} setup.py build_sphinx -b html
+python3 setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 # generate the configuration file
-PYTHONPATH=. oslo-config-generator-%{pyver} --config-file etc/oslo-config-generator/networking-sfc.conf
+PYTHONPATH=. oslo-config-generator-3 --config-file etc/oslo-config-generator/networking-sfc.conf
 
 
 %install
-%pyver_install
+%py3_install
 
 # The generated config files are not moved automatically by setup.py
 mkdir -p %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-server
@@ -159,15 +138,15 @@ mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neut
 
 %check
 export PATH=$PATH:$RPM_BUILD_ROOT/usr/bin
-PYTHON=%{pyver_bin} stestr-%{pyver} run
+PYTHON=python3 stestr-3 run
 
-%files -n python%{pyver}-%{pypi_name}
+%files -n python3-%{pypi_name}
 %license LICENSE
 %doc README.rst
-%{pyver_sitelib}/%{module}
-%{pyver_sitelib}/%{module}-*.egg-info
+%{python3_sitelib}/%{module}
+%{python3_sitelib}/%{module}-*.egg-info
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/conf.d/neutron-server/networking-sfc.conf
-%exclude %{pyver_sitelib}/%{module}/tests
+%exclude %{python3_sitelib}/%{module}/tests
 
 %if 0%{?with_doc}
 %files -n python-%{pypi_name}-doc
@@ -175,8 +154,8 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run
 %license LICENSE
 %endif
 
-%files -n python%{pyver}-%{pypi_name}-tests
-%{pyver_sitelib}/%{module}/tests
-%exclude %{pyver_sitelib}/%{module}/tests/contrib
+%files -n python3-%{pypi_name}-tests
+%{python3_sitelib}/%{module}/tests
+%exclude %{python3_sitelib}/%{module}/tests/contrib
 
 %changelog
