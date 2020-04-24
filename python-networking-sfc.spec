@@ -159,3 +159,4 @@ PYTHON=python3 stestr-3 run
 %exclude %{python3_sitelib}/%{module}/tests/contrib
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/networking-sfc/commit/?id=07f17590febf20a1f97794c4a2bc29fce415fe64
