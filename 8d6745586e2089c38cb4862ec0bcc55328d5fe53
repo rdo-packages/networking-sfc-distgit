@@ -1,0 +1,9 @@
+Code-Review+2: Yatin Karel <ykarel@redhat.com>
+Code-Review+2: Bernard Cafarelli <bcafarel@redhat.com>
+Workflow+1: Bernard Cafarelli <bcafarel@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Mon, 27 Apr 2020 13:25:33 +0000
+Reviewed-on: https://review.rdoproject.org/r/26798
+Project: openstack/networking-sfc-distgit
+Branch: refs/heads/rpm-master
