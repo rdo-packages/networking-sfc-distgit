@@ -120,14 +120,13 @@ rm -rf %{module}/tests/unit/cli
 %py3_build
 
 %if 0%{?with_doc}
-python3 setup.py build_sphinx -b html
+PYTHONPATH=. sphinx-build-3 -W -b html doc/source doc/build/html
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 # generate the configuration file
 PYTHONPATH=. oslo-config-generator-3 --config-file etc/oslo-config-generator/networking-sfc.conf
-
 
 %install
 %py3_install
