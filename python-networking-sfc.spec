@@ -1,3 +1,4 @@
+%global milestone .0rc1
 %global pypi_name networking-sfc
 %global module networking_sfc
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -23,13 +24,17 @@ implemented as a collection of physical network devices connected in series by \
 cables.
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        11.0.0
+Release:        0.1%{?milestone}%{?dist}
 Summary:        API and implementations to support Service Function Chaining in Neutron
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+
+#
+# patches_base=11.0.0.0rc1
+#
 
 BuildArch:      noarch
 
@@ -158,3 +163,6 @@ PYTHON=python3 stestr-3 run
 %exclude %{python3_sitelib}/%{module}/tests/contrib
 
 %changelog
+* Fri Sep 25 2020 RDO <dev@lists.rdoproject.org> 11.0.0-0.1.0rc1
+- Update to 11.0.0.0rc1
+
