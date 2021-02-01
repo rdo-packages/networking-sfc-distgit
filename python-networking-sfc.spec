@@ -36,7 +36,7 @@ implemented as a collection of physical network devices connected in series by \
 cables.
 
 Name:           python-%{pypi_name}
-Version:        9.0.0
+Version:        9.0.1
 Release:        1%{?dist}
 Summary:        API and implementations to support Service Function Chaining in Neutron
 
@@ -179,6 +179,9 @@ PYTHON=%{pyver_bin} stestr-%{pyver} run
 %exclude %{pyver_sitelib}/%{module}/tests/contrib
 
 %changelog
+* Mon Feb 01 2021 RDO <dev@lists.rdoproject.org> 9.0.1-1
+- Update to 9.0.1
+
 * Wed Oct 16 2019 RDO <dev@lists.rdoproject.org> 9.0.0-1
 - Update to 9.0.0
 
