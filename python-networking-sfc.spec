@@ -67,24 +67,24 @@ BuildRequires:  openstack-neutron
 Summary:        API and implementations to support Service Function Chaining in Neutron
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
-Requires:       python3-pbr >= 2.0.0
+Requires:       python3-pbr >= 4.0.0
 Requires:       openstack-neutron-common
-Requires:       openstack-neutron >= 1:13.0.0
-Requires:       python3-alembic >= 0.8.10
-Requires:       python3-eventlet >= 0.18.2
+Requires:       openstack-neutron >= 1:17.0.0
+Requires:       python3-alembic >= 0.9.6
+Requires:       python3-eventlet >= 0.25.1
 Requires:       python3-netaddr >= 0.7.18
 Requires:       python3-neutronclient >= 6.7.0
-Requires:       python3-oslo-config >= 2:5.2.0
-Requires:       python3-oslo-i18n >= 3.15.3
-Requires:       python3-oslo-log >= 3.36.0
-Requires:       python3-oslo-messaging >= 5.29.0
-Requires:       python3-oslo-serialization >= 2.18.0
-Requires:       python3-oslo-utils >= 3.33.0
-Requires:       python3-six >= 1.10.0
+Requires:       python3-oslo-config >= 2:8.0.0
+Requires:       python3-oslo-i18n >= 3.20.0
+Requires:       python3-oslo-log >= 4.3.0
+Requires:       python3-oslo-messaging >= 12.4.0
+Requires:       python3-oslo-serialization >= 2.25.0
+Requires:       python3-oslo-utils >= 4.5.0
+Requires:       python3-six >= 1.11.0
 Requires:       python3-sqlalchemy >= 1.2.0
 Requires:       python3-stevedore >= 1.20.0
-Requires:       python3-neutron
-Requires:       python3-neutron-lib >= 1.18.0
+Requires:       python3-neutron >= 17.0.0
+Requires:       python3-neutron-lib >= 2.8.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
