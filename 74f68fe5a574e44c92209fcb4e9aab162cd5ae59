@@ -1,0 +1,9 @@
+Code-Review+1: Sławek Kapłoński <skaplons@redhat.com>
+Code-Review+2: Yatin Karel <ykarel@redhat.com>
+Workflow+1: Yatin Karel <ykarel@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Fri, 19 Mar 2021 15:25:26 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/networking-sfc-distgit/+/32605
+Project: openstack/networking-sfc-distgit
+Branch: refs/heads/rpm-master
