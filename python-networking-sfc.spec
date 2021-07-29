@@ -23,7 +23,7 @@ implemented as a collection of physical network devices connected in series by \
 cables.
 
 Name:           python-%{pypi_name}
-Version:        10.0.0
+Version:        10.0.1
 Release:        1%{?dist}
 Summary:        API and implementations to support Service Function Chaining in Neutron
 
@@ -160,6 +160,9 @@ PYTHON=python3 stestr-3 run
 %exclude %{python3_sitelib}/%{module}/tests/contrib
 
 %changelog
+* Thu Jul 29 2021 RDO <dev@lists.rdoproject.org> 10.0.1-1
+- Update to 10.0.1
+
 * Wed May 13 2020 RDO <dev@lists.rdoproject.org> 10.0.0-1
 - Update to 10.0.0
 
