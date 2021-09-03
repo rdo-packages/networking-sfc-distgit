@@ -80,11 +80,10 @@ Requires:       python3-oslo-log >= 4.3.0
 Requires:       python3-oslo-messaging >= 12.4.0
 Requires:       python3-oslo-serialization >= 2.25.0
 Requires:       python3-oslo-utils >= 4.5.0
-Requires:       python3-six >= 1.11.0
 Requires:       python3-sqlalchemy >= 1.2.0
 Requires:       python3-stevedore >= 1.20.0
 Requires:       python3-neutron >= 17.0.0
-Requires:       python3-neutron-lib >= 2.8.0
+Requires:       python3-neutron-lib >= 2.11.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
