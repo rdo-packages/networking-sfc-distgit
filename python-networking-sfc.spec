@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
 %global pypi_name networking-sfc
 %global module networking_sfc
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -25,8 +25,8 @@ implemented as a collection of physical network devices connected in series by \
 cables.
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        13.0.0
+Release:        1%{?dist}
 Summary:        API and implementations to support Service Function Chaining in Neutron
 
 License:        ASL 2.0
@@ -173,3 +173,6 @@ PYTHON=python3 stestr-3 run
 %exclude %{python3_sitelib}/%{module}/tests/contrib
 
 %changelog
+* Mon Oct 11 2021 RDO <dev@lists.rdoproject.org> 13.0.0-1
+- Update to 13.0.0
+
