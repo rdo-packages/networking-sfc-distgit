@@ -173,3 +173,4 @@ PYTHON=python3 stestr-3 run
 %exclude %{python3_sitelib}/%{module}/tests/contrib
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/networking-sfc/commit/b4b5e6879af150dafb774d9d00dd9ef5579f1665
