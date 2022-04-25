@@ -16,6 +16,24 @@
       "message": "I think this is https://bugs.launchpad.net/tripleo/+bug/1969985 (same error)",
       "revId": "5e2b31c6a717db3eae5117946d5f0c20e56ef303",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30b567c7_310e3bf5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2022-04-25T14:03:53Z",
+      "side": 1,
+      "message": "Has been fixed with https://review.rdoproject.org/r/c/rdoinfo/+/42155 and rechecked. it can be abandoned.",
+      "parentUuid": "2759368a_0a4d6508",
+      "revId": "5e2b31c6a717db3eae5117946d5f0c20e56ef303",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
