@@ -83,7 +83,7 @@ Requires:       python3-oslo-utils >= 4.5.0
 Requires:       python3-sqlalchemy >= 1.2.0
 Requires:       python3-stevedore >= 1.20.0
 Requires:       python3-neutron >= 17.0.0
-Requires:       python3-neutron-lib >= 2.11.0
+Requires:       python3-neutron-lib >= 2.19.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}
