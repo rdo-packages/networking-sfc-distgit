@@ -1,0 +1,87 @@
+From e01048cc521c2c16f36cea23eef8331c6bae0904 Mon Sep 17 00:00:00 2001
+From: yatinkarel <ykarel@redhat.com>
+Date: Fri, 14 May 2021 11:20:48 +0530
+Subject: [PATCH] Use assertCountEqual instead of assertItemsEqual
+
+The assertItemsEqual method has been removed in Python 3.3 [1] but
+it was kept alive by unittest2, imported by testtools. For better
+compatibility, change to assertCountEqual.
+
+[1] https://bugs.python.org/issue17866
+
+Change-Id: If5e544792e7b3bb8c62bb9d6bb38c189bf923dff
+---
+ networking_sfc/tests/unit/db/test_sfc_db.py               | 2 +-
+ .../tests/unit/services/flowclassifier/test_plugin.py     | 2 +-
+ networking_sfc/tests/unit/services/sfc/test_plugin.py     | 8 ++++----
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/networking_sfc/tests/unit/db/test_sfc_db.py b/networking_sfc/tests/unit/db/test_sfc_db.py
+index b2492d2..a6e0a94 100644
+--- a/networking_sfc/tests/unit/db/test_sfc_db.py
++++ b/networking_sfc/tests/unit/db/test_sfc_db.py
+@@ -48,7 +48,7 @@ class SfcDbPluginTestCaseBase(
+         # Flow classifiers are stored in a list, only check items for them
+         for k, v in expected.items():
+             if type(v) is list:
+-                self.assertItemsEqual(res_port_chain[k], v)
++                self.assertCountEqual(res_port_chain[k], v)
+             else:
+                 self.assertEqual(res_port_chain[k], v)
+ 
+diff --git a/networking_sfc/tests/unit/services/flowclassifier/test_plugin.py b/networking_sfc/tests/unit/services/flowclassifier/test_plugin.py
+index c316bd0..7e0ca20 100644
+--- a/networking_sfc/tests/unit/services/flowclassifier/test_plugin.py
++++ b/networking_sfc/tests/unit/services/flowclassifier/test_plugin.py
+@@ -210,7 +210,7 @@ class FlowClassifierPluginTestCase(
+                      .assert_not_called())
+                 res = self._list('flow_classifiers')
+                 self.assertIn('flow_classifiers', res)
+-                self.assertItemsEqual(
++                self.assertCountEqual(
+                     res['flow_classifiers'], [updated_flow_classifier])
+ 
+     def test_update_flow_classifier_precommit_driver_manager_exception(self):
+diff --git a/networking_sfc/tests/unit/services/sfc/test_plugin.py b/networking_sfc/tests/unit/services/sfc/test_plugin.py
+index dc0404d..2162290 100644
+--- a/networking_sfc/tests/unit/services/sfc/test_plugin.py
++++ b/networking_sfc/tests/unit/services/sfc/test_plugin.py
+@@ -170,7 +170,7 @@ class SfcPluginTestCase(test_sfc_db.SfcDbPluginTestCase):
+                 self.assertEqual(500, res.status_int)
+                 res = self._list('port_chains')
+                 self.assertIn('port_chains', res)
+-                self.assertItemsEqual(
++                self.assertCountEqual(
+                     res['port_chains'], [updated_port_chain])
+ 
+     def test_update_port_chain_precommit_driver_manager_exception(self):
+@@ -371,7 +371,7 @@ class SfcPluginTestCase(test_sfc_db.SfcDbPluginTestCase):
+             self.assertEqual(500, res.status_int)
+             res = self._list('port_pair_groups')
+             self.assertIn('port_pair_groups', res)
+-            self.assertItemsEqual(
++            self.assertCountEqual(
+                 res['port_pair_groups'], [updated_port_pair_group])
+ 
+     def test_update_port_pair_group_precommit_driver_manager_exception(self):
+@@ -623,7 +623,7 @@ class SfcPluginTestCase(test_sfc_db.SfcDbPluginTestCase):
+                 self.assertEqual(500, res.status_int)
+                 res = self._list('port_pairs')
+                 self.assertIn('port_pairs', res)
+-                self.assertItemsEqual(res['port_pairs'], [updated_port_pair])
++                self.assertCountEqual(res['port_pairs'], [updated_port_pair])
+ 
+     def test_update_port_pair_precommit_driver_manager_exception(self):
+         self.fake_driver_manager.update_port_pair_precommit = mock.Mock(
+@@ -906,7 +906,7 @@ class SfcPluginTestCase(test_sfc_db.SfcDbPluginTestCase):
+                     self.assertEqual(500, res.status_int)
+                     res = self._list('service_graphs')
+                     self.assertIn('service_graphs', res)
+-                    self.assertItemsEqual(
++                    self.assertCountEqual(
+                         res['service_graphs'], [updated_service_graph])
+ 
+     def test_update_service_graph_precommit_driver_manager_exception(self):
+-- 
+2.34.1
+

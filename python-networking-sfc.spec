@@ -32,6 +32,7 @@ Summary:        API and implementations to support Service Function Chaining in 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Patch001:       0001-Use-assertCountEqual-instead-of-assertItemsEqual.patch
 #
 
 # Required for tarball sources verification
@@ -84,6 +85,7 @@ Requires:       python3-oslo-serialization >= 2.18.0
 Requires:       python3-oslo-utils >= 3.33.0
 Requires:       python3-six >= 1.10.0
 Requires:       python3-sqlalchemy >= 1.2.0
+Requires:       python3-sqlalchemy < 1.4.0
 Requires:       python3-stevedore >= 1.20.0
 Requires:       python3-neutron
 Requires:       python3-neutron-lib >= 1.18.0
