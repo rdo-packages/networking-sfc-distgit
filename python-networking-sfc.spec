@@ -84,6 +84,7 @@ Requires:       python3-oslo-serialization >= 2.18.0
 Requires:       python3-oslo-utils >= 3.33.0
 Requires:       python3-six >= 1.10.0
 Requires:       python3-sqlalchemy >= 1.2.0
+Requires:       python3-sqlalchemy < 1.4.0
 Requires:       python3-stevedore >= 1.20.0
 Requires:       python3-neutron
 Requires:       python3-neutron-lib >= 1.18.0
