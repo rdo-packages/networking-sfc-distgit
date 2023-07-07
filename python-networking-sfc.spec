@@ -3,6 +3,14 @@
 %global pypi_name networking-sfc
 %global module networking_sfc
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order os-api-ref
+
+# Exclude sphinx from BRs if docs are disabled
+%if ! 0%{?with_doc}
+%global excluded_brs %{excluded_brs} sphinx openstackdocstheme
+%endif
 %global docpath doc/build/html
 %global with_doc 1
 
@@ -29,7 +37,7 @@ Version:        XXX
 Release:        XXX
 Summary:        API and implementations to support Service Function Chaining in Neutron
 
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            https://launchpad.net/%{pypi_name}
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
@@ -48,16 +56,9 @@ BuildRequires:  /usr/bin/gpgv2
 BuildRequires:  openstack-macros
 BuildRequires:  git-core
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
-# Test requirements
-BuildRequires:  python3-mock
-BuildRequires:  python3-oslotest
-BuildRequires:  python3-stestr
-BuildRequires:  python3-testresources
-BuildRequires:  python3-testscenarios
+BuildRequires:  pyproject-rpm-macros
 BuildRequires:  python3-neutron-lib-tests
 BuildRequires:  python3-neutron-tests
-BuildRequires:  python3-requests-mock
 BuildRequires:  openstack-neutron
 
 %description
@@ -65,36 +66,15 @@ BuildRequires:  openstack-neutron
 
 %package -n python3-%{pypi_name}
 Summary:        API and implementations to support Service Function Chaining in Neutron
-%{?python_provide:%python_provide python3-%{pypi_name}}
 
-Requires:       python3-pbr >= 4.0.0
 Requires:       openstack-neutron-common
 Requires:       openstack-neutron >= 1:17.0.0
-Requires:       python3-alembic >= 0.9.6
-Requires:       python3-eventlet >= 0.25.1
-Requires:       python3-netaddr >= 0.7.18
-Requires:       python3-neutronclient >= 6.7.0
-Requires:       python3-oslo-config >= 2:8.0.0
-Requires:       python3-oslo-i18n >= 3.20.0
-Requires:       python3-oslo-log >= 4.3.0
-Requires:       python3-oslo-messaging >= 12.4.0
-Requires:       python3-oslo-serialization >= 2.25.0
-Requires:       python3-oslo-utils >= 4.5.0
-Requires:       python3-sqlalchemy >= 1.2.0
-Requires:       python3-stevedore >= 1.20.0
-Requires:       python3-neutron >= 17.0.0
-Requires:       python3-neutron-lib >= 2.19.0
-
 %description -n python3-%{pypi_name}
 %{common_desc}
 
 %if 0%{?with_doc}
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for networking-sfc
-
-BuildRequires:  python3-openstackdocstheme
-BuildRequires:  python3-sphinx
-BuildRequires:  python3-sphinxcontrib-rsvgconverter
 
 %description -n python-%{pypi_name}-doc
 %{common_desc}
@@ -105,6 +85,7 @@ This package contains documentation.
 %package -n python3-%{pypi_name}-tests
 Summary:        Tests for networking-sfc
 Requires:       python3-%{pypi_name} = %{version}-%{release}
+
 Requires:       python3-mock
 Requires:       python3-oslotest
 Requires:       python3-stestr
@@ -123,19 +104,37 @@ Networking-sfc set of tests
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
-# Let RPM handle the dependencies
-%py_req_cleanup
 
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
 # FIXME(bcafarel): require neutronclient.tests.unit (python-neutronclient-tests package was dropped)
 rm -rf %{module}/tests/unit/cli
 
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs}; do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+# Automatic BR generation
+%generate_buildrequires
+%if 0%{?with_doc}
+  %pyproject_buildrequires -t -e %{default_toxenv},docs
+%else
+  %pyproject_buildrequires -t -e %{default_toxenv}
+%endif
+
 %build
-%py3_build
+%pyproject_wheel
 
 %if 0%{?with_doc}
-PYTHONPATH=. sphinx-build-3 -W -b html doc/source doc/build/html
+%tox -e docs
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
@@ -144,21 +143,20 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 PYTHONPATH=. oslo-config-generator-3 --config-file etc/oslo-config-generator/networking-sfc.conf
 
 %install
-%py3_install
+%pyproject_install
 
 # The generated config files are not moved automatically by setup.py
 mkdir -p %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-server
 mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-server/networking-sfc.conf
 
 %check
-export PATH=$PATH:$RPM_BUILD_ROOT/usr/bin
-PYTHON=python3 stestr-3 run
+%tox -e %{default_toxenv}
 
 %files -n python3-%{pypi_name}
 %license LICENSE
 %doc README.rst
 %{python3_sitelib}/%{module}
-%{python3_sitelib}/%{module}-*.egg-info
+%{python3_sitelib}/%{module}-*.dist-info
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/conf.d/neutron-server/networking-sfc.conf
 %exclude %{python3_sitelib}/%{module}/tests
 
