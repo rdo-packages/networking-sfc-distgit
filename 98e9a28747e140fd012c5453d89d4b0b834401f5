@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "734e6ac9_0c7c43e3",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-07-11T14:47:14Z",
+      "side": 1,
+      "message": "I\u0027m wondering if sfc really needs the whole openstack-neutron, or maybe -common should be enough\n\nIf we keep openstack-neutron Requires, we can remove openstack-neutron-common as openstack-neutron requires it.",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 45
+      },
+      "revId": "98e9a28747e140fd012c5453d89d4b0b834401f5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
