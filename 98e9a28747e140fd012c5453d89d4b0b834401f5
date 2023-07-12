@@ -46,6 +46,30 @@
       },
       "revId": "98e9a28747e140fd012c5453d89d4b0b834401f5",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2adc67e0_a62b6222",
+        "filename": "python-networking-sfc.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-07-12T09:45:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26bca300_47b4022d",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 45
+      },
+      "revId": "98e9a28747e140fd012c5453d89d4b0b834401f5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
