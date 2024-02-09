@@ -176,3 +176,4 @@ PYTHON=python3 stestr-3 run
 * Mon Apr 11 2022 RDO <dev@lists.rdoproject.org> 14.0.0-1
 - Update to 14.0.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/networking-sfc/commit/b4b5e6879af150dafb774d9d00dd9ef5579f1665
