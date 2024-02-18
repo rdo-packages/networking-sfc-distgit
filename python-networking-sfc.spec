@@ -173,3 +173,4 @@ mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neut
 %exclude %{python3_sitelib}/%{module}/tests/contrib
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/networking-sfc/commit/a030685ee4960ae71364b4a1e07be4d6bf5781fb
