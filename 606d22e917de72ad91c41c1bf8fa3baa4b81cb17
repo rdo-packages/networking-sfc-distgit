@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3a6407d_6bd6ae8d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2024-05-28T07:40:11Z",
+      "side": 1,
+      "message": "DLRN-rpmbuild-centos9 job in rpm-master does not uses dalmatian-uc tag so it\u0027s not using the pinned hash. I\u0027m manually merging this review to unblock the network component.",
+      "revId": "606d22e917de72ad91c41c1bf8fa3baa4b81cb17",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
