@@ -88,7 +88,6 @@ This package contains documentation.
 Summary:        Tests for networking-sfc
 Requires:       python3-%{pypi_name} = %{version}-%{release}
 
-Requires:       python3-mock
 Requires:       python3-oslotest
 Requires:       python3-stestr
 Requires:       python3-testresources
