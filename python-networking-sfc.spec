@@ -3,6 +3,8 @@
 %global pypi_name networking-sfc
 %global module networking_sfc
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{?dlrn: %global tarsources networking-sfc}
+%{!?dlrn: %global tarsources networking_sfc}
 
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order os-api-ref pylint
@@ -39,10 +41,10 @@ Summary:        API and implementations to support Service Function Chaining in 
 
 License:        Apache-2.0
 URL:            https://launchpad.net/%{pypi_name}
-Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        https://tarballs.openstack.org/%{pypi_name}/%{tarsources}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
+Source101:        https://tarballs.openstack.org/%{pypi_name}/%{tarsources}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 
@@ -104,7 +106,7 @@ Networking-sfc set of tests
 %if 0%{?sources_gpg} == 1
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
-%autosetup -n %{pypi_name}-%{upstream_version} -S git
+%autosetup -n %{tarsources}-%{upstream_version} -S git
 
 # FIXME(bcafarel): require neutronclient.tests.unit (python-neutronclient-tests package was dropped)
 rm -rf %{module}/tests/unit/cli
