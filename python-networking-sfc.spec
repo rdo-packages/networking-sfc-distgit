@@ -1,8 +1,11 @@
+%global milestone .0rc1
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 %global pypi_name networking-sfc
 %global module networking_sfc
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{?dlrn: %global tarsources python-networking-sfc}
+%{!?dlrn: %global tarsources python_networking_sfc}
 
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order os-api-ref pylint
@@ -33,16 +36,20 @@ implemented as a collection of physical network devices connected in series by \
 cables.
 
 Name:           python-%{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        20.0.0
+Release:        0.1%{?milestone}%{?dist}
 Summary:        API and implementations to support Service Function Chaining in Neutron
 
 License:        Apache-2.0
 URL:            https://launchpad.net/%{pypi_name}
-Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        https://tarballs.openstack.org/%{pypi_name}/%{tarsources}-%{upstream_version}.tar.gz
+#
+# patches_base=20.0.0.0rc1
+#
+
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
+Source101:        https://tarballs.openstack.org/%{pypi_name}/%{tarsources}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 
@@ -104,7 +111,7 @@ Networking-sfc set of tests
 %if 0%{?sources_gpg} == 1
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
-%autosetup -n %{pypi_name}-%{upstream_version} -S git
+%autosetup -n %{tarsources}-%{upstream_version} -S git
 
 # FIXME(bcafarel): require neutronclient.tests.unit (python-neutronclient-tests package was dropped)
 rm -rf %{module}/tests/unit/cli
@@ -172,3 +179,6 @@ mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neut
 %exclude %{python3_sitelib}/%{module}/tests/contrib
 
 %changelog
+* Mon Mar 17 2025 RDO <dev@lists.rdoproject.org> 20.0.0-0.1.0rc1
+- Update to 20.0.0.0rc1
+
