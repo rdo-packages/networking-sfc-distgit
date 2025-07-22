@@ -147,8 +147,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 PYTHONPATH=. oslo-config-generator-3 --config-file etc/oslo-config-generator/networking-sfc.conf
 
 # The generated config files are not moved automatically by setup.py
+mv etc/networking-sfc.conf.sample %{_sysconfig}/neutron/%{module}.conf
 mkdir -p %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-server
-mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-server/networking-sfc.conf
+ln -s %{_sysconfdir}/neutron/%{module}.conf %{buildroot}%{_datadir}/neutron/server/%{module}.conf
 
 %check
 %tox -e %{default_toxenv}
@@ -158,7 +159,8 @@ mv etc/networking-sfc.conf.sample %{buildroot}%{_sysconfdir}/neutron/conf.d/neut
 %doc README.rst
 %{python3_sitelib}/%{module}
 %{python3_sitelib}/%{module}-*.dist-info
-%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/conf.d/neutron-server/networking-sfc.conf
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/%{module}.conf
+%{_datadir}/neutron/server/%{module}.conf
 %exclude %{python3_sitelib}/%{module}/tests
 
 %if 0%{?with_doc}
